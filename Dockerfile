@@ -1,9 +1,11 @@
 # stage1 - build react app first 
-FROM node:8.16 as build-deps
-WORKDIR /usr/src/app
-COPY package.json yarn.lock ./
+FROM node:12.16.1-alpine3.9 as build
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY ./package.json /app/
+COPY ./yarn.lock /app/
 RUN yarn
-COPY . ./
+COPY . /app
 RUN yarn build
 
 # stage 2 - build the final image and copy the react build files
