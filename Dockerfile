@@ -4,9 +4,9 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY ./package.json /app/
 COPY ./yarn.lock /app/
-RUN yarn
+RUN npm
 COPY . /app
-RUN yarn build
+RUN npm build
 
 # stage 2 - build the final image and copy the react build files
 FROM nginx:1.17.8-alpine
