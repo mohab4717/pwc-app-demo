@@ -1,25 +1,79 @@
-## BMI Calculator
+# Dockerized ReactJS application
 
-[![Build Status](https://travis-ci.com/GermaVinsmoke/bmi-calculator.svg?branch=master)](https://travis-ci.com/GermaVinsmoke/bmi-calculator)
-[![Coverage Status](https://coveralls.io/repos/github/GermaVinsmoke/bmi-calculator/badge.svg?branch=master)](https://coveralls.io/github/GermaVinsmoke/bmi-calculator?branch=master)
-[![codecov](https://codecov.io/gh/GermaVinsmoke/bmi-calculator/branch/master/graph/badge.svg)](https://codecov.io/gh/GermaVinsmoke/bmi-calculator)
+![Docker plus React plus Codefresh](docker-reactjs-codefresh.jpg)
 
-React Hooks app to calculate the BMI of a person. It can store the data for 7 days with the help of LocalStorage.
+This is an example Node application that uses React, Yarn and Docker.
+It is packaged using Codefresh.
 
-![](images/1.jpg)
+More details can be found in [the documentation page](https://codefresh.io/docs/docs/learn-by-example/nodejs/react/).
 
-Created with _create-react-app_. See the [full create-react-app guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Install
 
-`npm install`
+## Instructions
 
-## Usage
+To install dependencies 
 
-`npm start`
+```
+yarn install 
+```
 
-## Enhancement
+or
 
-1. Removing the dependency of Materialize-CSS module
+```
+npm install 
+```
 
-~~2. Chart going crazy on hovering over the old points~~
+## To run tests
+
+```
+yarn test 
+```
+
+or
+
+```
+npm test 
+```
+
+## To run the webapp manually
+
+```
+yarn start 
+```
+
+or
+
+```
+npm start 
+```
+
+....and navigate your browser to  http://localhost:3000/
+
+## To create a docker image
+
+```
+docker build -t my-react-app .
+```
+
+
+## To run the docker image
+
+```
+docker run -p 80:80 my-react-app
+```
+
+
+## To use this project in Codefresh 
+
+There is also a [codefresh.yml](codefresh.yml) for easy usage with the [Codefresh](codefresh.io) CI/CD platform.
+
+
+Enjoy!
+
+
+
+
+
+
+
+
